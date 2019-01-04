@@ -18,6 +18,8 @@ public class Rocket : MonoBehaviour
     [SerializeField] ParticleSystem successParticles;
     [SerializeField] ParticleSystem explosionParticles;
 
+    float levelLoadDelay = 2f;
+
     Rigidbody rigidBody;
     AudioSource audioSource;
 
@@ -51,6 +53,7 @@ public class Rocket : MonoBehaviour
                 StartDeathSequence();
                 break;
             case "Target":
+                // TODO check if rocket is stable on landing pad
                 StartSuccessSequence();
                 break;
             case "Fuel":
@@ -69,7 +72,7 @@ public class Rocket : MonoBehaviour
         successParticles.Play();
         state = State.Transcending;
         if (currentLevel != 2) { currentLevel++; }
-        Invoke("LoadNextScene", 2f);
+        Invoke("LoadNextScene", levelLoadDelay);
     }
 
     private void StartDeathSequence()
@@ -80,7 +83,7 @@ public class Rocket : MonoBehaviour
         explosionParticles.Play();
         state = State.Dying;
         currentLevel = 0;
-        Invoke("LoadFirstLevel", 2f);
+        Invoke("LoadFirstLevel", levelLoadDelay);
     }
 
     private void LoadNextScene()

@@ -500,7 +500,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementVector: {x: 0, y: 14, z: 0}
-  period: 3
+  period: 4
   movementFactor: 0
 --- !u!1 &1039572196
 GameObject:
@@ -693,6 +693,18 @@ PrefabInstance:
     - target: {fileID: 100689239, guid: 6adb2e60d0865ef4e9f7933f4793cd8c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100689238, guid: 6adb2e60d0865ef4e9f7933f4793cd8c, type: 3}
+      propertyPath: m_Mass
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100689236, guid: 6adb2e60d0865ef4e9f7933f4793cd8c, type: 3}
+      propertyPath: rcsThrust
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 100689236, guid: 6adb2e60d0865ef4e9f7933f4793cd8c, type: 3}
+      propertyPath: rcsRotate
+      value: 150
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6adb2e60d0865ef4e9f7933f4793cd8c, type: 3}

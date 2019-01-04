@@ -20,6 +20,7 @@ public class Oscillator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (period == 0f) { Debug.LogError("Period can't be 0!"); }
         float cycles = Time.time / period;
         const float tau = Mathf.PI * 2f; // about 6.28
         float rawSineWave = Mathf.Sin(cycles * tau);
