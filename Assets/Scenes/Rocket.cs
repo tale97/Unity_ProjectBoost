@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class Rocket : MonoBehaviour
 {
-    [SerializeField] float rcsThrust = 75;
-    [SerializeField] float rcsRotate = 100;
+    [SerializeField] float rcsThrust = 100f;
+    [SerializeField] float rcsRotate = 100f;
 
     Rigidbody rigidBody;
     AudioSource audioSource;
@@ -25,6 +25,24 @@ public class Rocket : MonoBehaviour
         Rotate();
     }
 
+    void OnCollisionEnter(Collision collision)
+    {
+        switch (collision.gameObject.tag)
+        {
+            case "Dangerous":
+                print("Dead");
+                break;
+            case "Target":
+                print("Successful Landing");
+                break;
+            case "Fuel":
+                print("Refueling");
+                break;
+            default:
+                break;
+        }
+    }
+
     private void Thrust()
     {
         if (Input.GetKey(KeyCode.Space)) // can thrust while rotating
@@ -37,7 +55,7 @@ public class Rocket : MonoBehaviour
 
     private void Rotate()
     {
-        //rigidBody.freezeRotation = true;
+        rigidBody.freezeRotation = true;
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
@@ -57,7 +75,7 @@ public class Rocket : MonoBehaviour
             transform.Rotate(Vector3.left);
         }
         */
-        //rigidBody.freezeRotation = false; // resume physics rotation
+        rigidBody.freezeRotation = false; // resume physics rotation
     }
 
 }

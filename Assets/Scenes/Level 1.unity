@@ -193,6 +193,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Launch Pad (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8443352196734603739, guid: 71184a456b36bbf47a8ef09ade9ef7ee,
+        type: 3}
+      propertyPath: m_TagString
+      value: Target
+      objectReference: {fileID: 0}
     - target: {fileID: 4126950944360928939, guid: 71184a456b36bbf47a8ef09ade9ef7ee,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -262,7 +267,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: bfade86f326903a40b6c5a9b107006b2, type: 2}
+      objectReference: {fileID: 2100000, guid: 09c3f2ed38999984da4c8a94a3b6dba6, type: 2}
     - target: {fileID: 6420773973858903116, guid: 71184a456b36bbf47a8ef09ade9ef7ee,
         type: 3}
       propertyPath: m_Enabled
@@ -281,6 +286,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Launch Pad (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8443352196734603739, guid: 71184a456b36bbf47a8ef09ade9ef7ee,
+        type: 3}
+      propertyPath: m_TagString
+      value: Dangerous
       objectReference: {fileID: 0}
     - target: {fileID: 4126950944360928939, guid: 71184a456b36bbf47a8ef09ade9ef7ee,
         type: 3}
@@ -356,7 +366,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: bfade86f326903a40b6c5a9b107006b2, type: 2}
+      objectReference: {fileID: 2100000, guid: c41882c8ffb45ed41922760dccdf68a8, type: 2}
     - target: {fileID: 6420773973858903116, guid: 71184a456b36bbf47a8ef09ade9ef7ee,
         type: 3}
       propertyPath: m_Enabled
@@ -458,6 +468,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Launch Pad (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8443352196734603739, guid: 71184a456b36bbf47a8ef09ade9ef7ee,
+        type: 3}
+      propertyPath: m_TagString
+      value: Dangerous
+      objectReference: {fileID: 0}
     - target: {fileID: 4126950944360928939, guid: 71184a456b36bbf47a8ef09ade9ef7ee,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -532,7 +547,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: bfade86f326903a40b6c5a9b107006b2, type: 2}
+      objectReference: {fileID: 2100000, guid: c41882c8ffb45ed41922760dccdf68a8, type: 2}
     - target: {fileID: 6420773973858903116, guid: 71184a456b36bbf47a8ef09ade9ef7ee,
         type: 3}
       propertyPath: m_Enabled
@@ -551,6 +566,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Launch Pad (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8443352196734603739, guid: 71184a456b36bbf47a8ef09ade9ef7ee,
+        type: 3}
+      propertyPath: m_TagString
+      value: Target
       objectReference: {fileID: 0}
     - target: {fileID: 4126950944360928939, guid: 71184a456b36bbf47a8ef09ade9ef7ee,
         type: 3}
@@ -621,7 +641,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: bfade86f326903a40b6c5a9b107006b2, type: 2}
+      objectReference: {fileID: 2100000, guid: 09c3f2ed38999984da4c8a94a3b6dba6, type: 2}
     - target: {fileID: 6420773973858903116, guid: 71184a456b36bbf47a8ef09ade9ef7ee,
         type: 3}
       propertyPath: m_Enabled
@@ -823,6 +843,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Launch Pad
+      objectReference: {fileID: 0}
+    - target: {fileID: 8443352196734603739, guid: 71184a456b36bbf47a8ef09ade9ef7ee,
+        type: 3}
+      propertyPath: m_TagString
+      value: Fuel
       objectReference: {fileID: 0}
     - target: {fileID: 4126950944360928939, guid: 71184a456b36bbf47a8ef09ade9ef7ee,
         type: 3}
