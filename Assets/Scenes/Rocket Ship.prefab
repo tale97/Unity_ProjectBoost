@@ -166,6 +166,9 @@ MonoBehaviour:
   rcsThrust: 100
   rcsRotate: 100
   currentLevel: 0
+  mainEngine: {fileID: 8300000, guid: cd2e70803d238e5458b75028a97164a6, type: 3}
+  SuccessfulLanding: {fileID: 8300000, guid: 0d3e083a63b43dd48b82ceea39e1bf8d, type: 3}
+  Explosion: {fileID: 8300000, guid: 309b8e87785c22646be13d91d8c2f27b, type: 3}
 --- !u!1 &157168558
 GameObject:
   m_ObjectHideFlags: 0
