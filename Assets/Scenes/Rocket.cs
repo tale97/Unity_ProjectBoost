@@ -9,9 +9,14 @@ public class Rocket : MonoBehaviour
     [SerializeField] float rcsThrust = 100f;
     [SerializeField] float rcsRotate = 100f;
     [SerializeField] int currentLevel = 0;
+
     [SerializeField] AudioClip mainEngine;
     [SerializeField] AudioClip SuccessfulLanding;
     [SerializeField] AudioClip Explosion;
+
+    [SerializeField] ParticleSystem engineParticles;
+    [SerializeField] ParticleSystem successParticles;
+    [SerializeField] ParticleSystem explosionParticles;
 
     Rigidbody rigidBody;
     AudioSource audioSource;
@@ -33,9 +38,7 @@ public class Rocket : MonoBehaviour
         {
             ResponseToThrustInput();
             ResponseToRotateInput();
-            print(currentLevel);
         }
-        //else { audioSource.Stop();  }
     }
 
     void OnCollisionEnter(Collision collision)
@@ -60,8 +63,10 @@ public class Rocket : MonoBehaviour
 
     private void StartSuccessSequence()
     {
+        engineParticles.Stop();
         audioSource.Stop();
         audioSource.PlayOneShot(SuccessfulLanding);
+        successParticles.Play();
         state = State.Transcending;
         if (currentLevel != 2) { currentLevel++; }
         Invoke("LoadNextScene", 2f);
@@ -69,8 +74,10 @@ public class Rocket : MonoBehaviour
 
     private void StartDeathSequence()
     {
+        engineParticles.Stop();
         audioSource.Stop();
         audioSource.PlayOneShot(Explosion);
+        explosionParticles.Play();
         state = State.Dying;
         currentLevel = 0;
         Invoke("LoadFirstLevel", 2f);
@@ -94,8 +101,13 @@ public class Rocket : MonoBehaviour
         {
             rigidBody.AddRelativeForce(Vector3.up * Time.deltaTime * rcsThrust);
             if (!audioSource.isPlaying) { audioSource.Play(); }
+            if (!engineParticles.isPlaying) { engineParticles.Play(); }
         }
-        else { audioSource.Stop(); }
+        else
+        {
+            audioSource.Stop();
+            engineParticles.Stop();
+        }
     }
 
     private void ResponseToRotateInput()
