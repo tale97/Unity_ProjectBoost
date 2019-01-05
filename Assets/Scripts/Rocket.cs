@@ -37,7 +37,12 @@ public class Rocket : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {   
+    {
+        if (Input.GetKey("escape"))
+        {
+            Application.Quit();
+        }
+
         // if in debug build, respond to debug keys
         if (Debug.isDebugBuild)
         {
