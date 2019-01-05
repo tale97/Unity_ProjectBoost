@@ -18,6 +18,8 @@ public class Rocket : MonoBehaviour
     [SerializeField] ParticleSystem successParticles;
     [SerializeField] ParticleSystem explosionParticles;
 
+    [SerializeField] bool collisionDetection = true;
+
     float levelLoadDelay = 2f;
 
     Rigidbody rigidBody;
@@ -35,11 +37,14 @@ public class Rocket : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        int numLevel = SceneManager.sceneCountInBuildSettings;
-        int currentLevel = SceneManager.GetActiveScene().buildIndex;
-        int nextLevel = (currentLevel + 1) % numLevel;
-        if (Input.GetKey(KeyCode.N)) { SceneManager.LoadScene(nextLevel); }
+    {   
+        // if in debug build, respond to debug keys
+        if (Debug.isDebugBuild)
+        {
+            if (Input.GetKey(KeyCode.N)) { LoadNextScene(); }
+            if (Input.GetKey(KeyCode.C)) { collisionDetection = !collisionDetection; }
+        }
+
         if (state == State.Alive)
         {
             ResponseToThrustInput();
@@ -54,7 +59,7 @@ public class Rocket : MonoBehaviour
         switch (collision.gameObject.tag)
         {
             case "Dangerous":
-                StartDeathSequence();
+                if (collisionDetection) { StartDeathSequence(); }
                 break;
             case "Target":
                 // TODO check if rocket is stable on landing pad
