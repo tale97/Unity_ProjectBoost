@@ -36,6 +36,10 @@ public class Rocket : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        int numLevel = SceneManager.sceneCountInBuildSettings;
+        int currentLevel = SceneManager.GetActiveScene().buildIndex;
+        int nextLevel = (currentLevel + 1) % numLevel;
+        if (Input.GetKey(KeyCode.N)) { SceneManager.LoadScene(nextLevel); }
         if (state == State.Alive)
         {
             ResponseToThrustInput();
@@ -89,7 +93,11 @@ public class Rocket : MonoBehaviour
     private void LoadNextScene()
     {
         state = State.Alive;
-        SceneManager.LoadScene(1);
+
+        int numLevel = SceneManager.sceneCountInBuildSettings;
+        int currentLevel = SceneManager.GetActiveScene().buildIndex;
+        int nextLevel = (currentLevel + 1) % numLevel;
+        SceneManager.LoadScene(nextLevel);
     }
 
     private void LoadFirstLevel()
