@@ -40,7 +40,8 @@ public class Rocket : MonoBehaviour
     {
         if (Input.GetKey("escape"))
         {
-            Application.Quit();
+            // go back to menu
+            SceneManager.LoadScene(0);
         }
 
         // if in debug build, respond to debug keys
@@ -97,19 +98,27 @@ public class Rocket : MonoBehaviour
         explosionParticles.Play();
         state = State.Dying;
         currentLevel = 0;
-        Invoke("LoadFirstLevel", levelLoadDelay);
+        Invoke("ReloadScene", levelLoadDelay);
     }
 
     private void LoadNextScene()
     {
         state = State.Alive;
 
-        int numLevel = SceneManager.sceneCountInBuildSettings;
+        int numLevel = SceneManager.sceneCountInBuildSettings - 1;
+        print(numLevel);
         int currentLevel = SceneManager.GetActiveScene().buildIndex;
-        int nextLevel = (currentLevel + 1) % numLevel;
+        int nextLevel = (currentLevel % numLevel) + 1;
         SceneManager.LoadScene(nextLevel);
     }
 
+    private void ReloadScene()
+    {
+        currentLevel = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentLevel);
+    }
+
+    // currently unused
     private void LoadFirstLevel()
     {
         state = State.Alive;
