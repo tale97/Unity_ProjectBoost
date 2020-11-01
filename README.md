@@ -1,9 +1,3 @@
-# Unity_ProjectBoost
-Rocket Booster Game
-
-
-
-
 # Rocket Launcher (Project Boost)
 
 ## Description
