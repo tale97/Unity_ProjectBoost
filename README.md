@@ -13,4 +13,4 @@ Click [here](https://youtu.be/EDDVn6_QHw8) to watch a video demo.
   - Unity Game Engine
   
 ## About The Project
-This is a project that I have been worked on more than a year ago. The reason I wanted to do this was because I wanted to explore game development. I learned a lot and had so much fun creating this game. I really recommend the course by Ben Tristem's [Complete C# Unity Game Developer 3D](https://www.udemy.com/share/101WeyAkYddltSQXo=/) to anyone who is insterested in learning game development.
+This is a project that I worked on more than a year ago. The reason I wanted to make this game was because I wanted to explore game development. I learned a lot and had so much fun creating this game. I really recommend the course by Ben Tristem's [Complete C# Unity Game Developer 3D](https://www.udemy.com/share/101WeyAkYddltSQXo=/) to anyone who is insterested in learning game development.
